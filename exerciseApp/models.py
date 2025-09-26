@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.utils import timezone
-
+from cloudinary_storage.storage import MediaCloudinaryStorage
 class Exercise(models.Model):
     exercise_name = models.CharField(max_length=255, unique=True,
                                  validators=[RegexValidator(regex='^[a-zA-Z0-9_-]+$',
@@ -65,3 +65,19 @@ class ExerciseRemarks(models.Model):
 
     def __str__(self):
         return f"Feedback for {self.exercise_title} by {self.user.username}"
+    
+class VideoUpload(models.Model):
+    title = models.CharField(max_length=200)
+    description=models.TextField(blank=True, null=True)
+    video=models.FileField(upload_to='Videos/', storage=MediaCloudinaryStorage())
+    
+    def __str__(self):
+        return self.title
+    
+class ImageUpload(models.Model):
+    title = models.CharField(max_length=200)
+    description=models.TextField(blank=True, null=True)
+    video=models.ImageField(upload_to='Images/', storage=MediaCloudinaryStorage())
+    
+    def __str__(self):
+        return self.title
