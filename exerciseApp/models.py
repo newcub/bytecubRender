@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.utils import timezone
 from cloudinary_storage.storage import MediaCloudinaryStorage
+from cloudinary.models import CloudinaryField   
+
+
 class Exercise(models.Model):
     exercise_name = models.CharField(max_length=255, unique=True,
                                  validators=[RegexValidator(regex='^[a-zA-Z0-9_-]+$',
@@ -69,7 +72,7 @@ class ExerciseRemarks(models.Model):
 class VideoUpload(models.Model):
     title = models.CharField(max_length=200)
     description=models.TextField(blank=True, null=True)
-    video=models.FileField(upload_to='Videos/', storage=MediaCloudinaryStorage())
+    video=CloudinaryField(resource_type='video', folder='Videos/')
     
     def __str__(self):
         return self.title

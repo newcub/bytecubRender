@@ -34,7 +34,7 @@
                     <div class="video-wrapper">
                         <video id="videoPlayer" width="560" height="315"  poster="{%static 'assets/images/IntroToHTML/1757183118927.jpg'%}" controls>
                             <!-- Sample video from Pexels -->
-                            <source  src="{%static 'assets/videos/CSS/Intro to CSS-byteCub.mp4'%}" type="video/mp4">
+                            <source  src="{{video.video.url}}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         

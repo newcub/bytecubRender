@@ -3,7 +3,7 @@ from .models import IntroToCSS
 from introToHTML_app.views import require_special_exercise_submission_HTML
 from django.http import HttpResponse
 from quizApp.models import QuizSubmission,Quiz
-from exerciseApp.models import SpecialExercise
+from exerciseApp.models import SpecialExercise,VideoUpload
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -12,7 +12,8 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 def introduction_to_cssView(request):
-    return render(request, 'Intro_To_CSS/introduction_to_css.html')
+    video=VideoUpload.objects.get(title="CSS_Vid1")
+    return render(request, 'Intro_To_CSS/introduction_to_css.html',{'video':video})
 
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
@@ -41,8 +42,8 @@ def CSS_intro_page3(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 def CSS_intro_page4(request):
-
-    return render(request, 'Intro_To_CSS/css_page4.html')
+    video=VideoUpload.objects.get(title="CSS_Vid2")
+    return render(request, 'Intro_To_CSS/css_page4.html',{'video':video})
 
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML

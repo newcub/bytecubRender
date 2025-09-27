@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
 from django.http import HttpResponse
-from exerciseApp.models import SpecialExercise
+from exerciseApp.models import SpecialExercise,VideoUpload
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from functools import wraps
@@ -15,8 +15,8 @@ from quizApp.models import Quiz
 
 
 def page1_view(request):
-
-    return render(request,'IntroToHTML/page1.html')
+    video=VideoUpload.objects.get(title="HTML_Vid1")
+    return render(request,'IntroToHTML/page1.html',{'video':video})
 
 @login_required(login_url="login")
 def page2_view(request):
@@ -52,7 +52,8 @@ def page5_view(request):
 @login_required(login_url="login")
 def page5b_view(request):
     context=IntroToHTML.objects.filter(title='HTML_intro5b')
-    return render(request,'IntroToHTML/page5b.html',{'code':context})
+    video=VideoUpload.objects.get(title="HTML_Vid2")
+    return render(request,'IntroToHTML/page5b.html',{'code':context,'video':video})
 
 @login_required(login_url="login")
 def page6_view(request):
@@ -99,6 +100,7 @@ def page7_view(request):
     code_2=IntroToHTML.objects.filter(title='HTML_intro7.2')
     code_3=IntroToHTML.objects.filter(title='HTML_intro7.3')
     code_4=IntroToHTML.objects.filter(title='HTML_intro7.4')
+    video=VideoUpload.objects.get(title="HTML_Vid3")
     quiz = get_object_or_404(Quiz, quiz_name='HTMLQ3')
     #check if the user has already submitted an answer for the quiz
     if request.user.is_anonymous:
@@ -112,6 +114,7 @@ def page7_view(request):
         'code_2':code_2,
         'code_3':code_3,
         'code_4':code_4,
+        'video':video,
         'has_answered':has_answered,
     }
     return render(request,'IntroToHTML/page7.html',context)
@@ -121,10 +124,14 @@ def page7b_view(request):
     code_1=IntroToHTML.objects.filter(title='HTML_intro7b.1')
     code_2=IntroToHTML.objects.filter(title='HTML_intro7b.2')
     code_3=IntroToHTML.objects.filter(title='HTML_intro7b.3')
+    video=VideoUpload.objects.get(title="HTML_Vid4")
+    video2=VideoUpload.objects.get(title="video_example")
     context={
         'code_1':code_1,
         'code_2':code_2,
         'code_3':code_3,
+        'video':video,
+        'video2':video2,
     }
     return render(request,'IntroToHTML/page7b.html',context)
 

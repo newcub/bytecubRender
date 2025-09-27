@@ -41,7 +41,7 @@
                     <div class="video-wrapper">
                         <video id="videoPlayer" width="560" height="315"  poster="{%static 'assets/images/IntroToHTML/1757183118927.jpg'%}" controls>
                             <!-- Sample video from Pexels -->
-                            <source  src="{%static 'assets/videos/HTML/Images and Vidoes In HTML-byteCub.mp4'%}" type="video/mp4">
+                            <source  src="{{video.video.url}}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         
@@ -159,7 +159,7 @@
                     <center>
                         <video  width="250" height="250" controls loop>
                             <!-- Sample video from Pexels -->
-                            <source  src="{%static 'assets/videos/HTML/3173312-hd_1920_1080_30fps.mp4'%}" type="video/mp4">
+                            <source  src="{{video2.video.url}}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </center>
