@@ -31,8 +31,12 @@ SECRET_KEY = 'django-insecure-l)4jewid*)4fou9*w^$d-94&f)7pf+2^n7xrtly2t_(q78=9#j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['bytecub.tech','www.bytecub.tech']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
+SECURE_SSL_REDIRECT=True
+USE_X_FORWARDED_HOST=True
+SESSION_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
 
 
 # Application definition
