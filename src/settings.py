@@ -179,6 +179,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if DEBUG:
     BASE_URL = 'http://127.0.0.1:8000/'
 else:
-    BASE_URL = 'https://bytecubrender-1.onrender.com'
+    BASE_URL = 'https://bytecub.tech/'
 
 
