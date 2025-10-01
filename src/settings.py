@@ -29,7 +29,7 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50 MB
 SECRET_KEY = 'django-insecure-l)4jewid*)4fou9*w^$d-94&f)7pf+2^n7xrtly2t_(q78=9#j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['bytecub.tech','www.bytecub.tech']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
@@ -179,6 +179,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if DEBUG:
     BASE_URL = 'http://127.0.0.1:8000/'
 else:
-    BASE_URL = 'https://bytecub.tech/'
+    BASE_URL = 'https://bytecub.tech'
 
 
