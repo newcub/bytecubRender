@@ -63,10 +63,8 @@ def page6_view(request):
     code_4=IntroToHTML.objects.filter(title='HTML_intro6.4')
     quiz = get_object_or_404(Quiz, quiz_name='HTMLQ2')
     #check if the user has already submitted an answer for the quiz
-    if request.user.is_anonymous:
-        has_answered=True
-    else:
-        has_answered=QuizSubmission.objects.filter(user=request.user, quiz=quiz).exists()
+    
+    has_answered=QuizSubmission.objects.filter(user=request.user, quiz=quiz).exists()
     # if request.user.is_anonymous:
     #     has_answered=True
     # else:
@@ -103,10 +101,8 @@ def page7_view(request):
     video=VideoUpload.objects.get(title="HTML_Vid3")
     quiz = get_object_or_404(Quiz, quiz_name='HTMLQ3')
     #check if the user has already submitted an answer for the quiz
-    if request.user.is_anonymous:
-        has_answered=True
-    else:
-        has_answered=QuizSubmission.objects.filter(user=request.user, quiz=quiz).exists()
+   
+    has_answered=QuizSubmission.objects.filter(user=request.user, quiz=quiz).exists()
 
 
     context={
@@ -147,10 +143,8 @@ def page8_view(request):
     code_8=IntroToHTML.objects.filter(title='HTML_intro8.8')
     quiz = get_object_or_404(Quiz, quiz_name='HTMLQ4')
     #check if the user has already submitted an answer for the quiz
-    if request.user.is_anonymous:
-        has_answered=True
-    else:
-        has_answered=QuizSubmission.objects.filter(user=request.user, quiz=quiz).exists()
+    
+    has_answered=QuizSubmission.objects.filter(user=request.user, quiz=quiz).exists()
 
 
     context={
