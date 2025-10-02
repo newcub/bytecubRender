@@ -461,10 +461,21 @@ def js_page22(request):
 # python views python views python views python views python views python views python views python views python views python views 
 
 
-
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page1(request):
     return render(request, 'python/code/py_page1.html')
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page2(request):
     code_1=PogrammingLanguage.objects.filter(title='python2.1')
     code_2=PogrammingLanguage.objects.filter(title='python2.2')
@@ -478,6 +489,12 @@ def py_page2(request):
     }
     return render(request, 'python/code/py_page2.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page3(request):
     code_1=PogrammingLanguage.objects.filter(title='python3.1')
     code_2=PogrammingLanguage.objects.filter(title='python3.2')
@@ -493,6 +510,12 @@ def py_page3(request):
     }
     return render(request, 'python/code/py_page3.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page4(request):
     code_1=PogrammingLanguage.objects.filter(title='python4.1')
     code_2=PogrammingLanguage.objects.filter(title='python4.2')
@@ -506,6 +529,12 @@ def py_page4(request):
     }
     return render(request, 'python/code/py_page4.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page5(request):
     code_1=PogrammingLanguage.objects.filter(title='python5.1')
     code_2=PogrammingLanguage.objects.filter(title='python5.2')
@@ -524,6 +553,12 @@ def py_page5(request):
     }
     return render(request, 'python/code/py_page5.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page6(request):
     code_1=PogrammingLanguage.objects.filter(title='python6.1')
     code_2=PogrammingLanguage.objects.filter(title='python6.2')
@@ -537,6 +572,13 @@ def py_page6(request):
     }
     return render(request, 'python/code/py_page6.html', context)
 
+
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page7(request):
     code_1=PogrammingLanguage.objects.filter(title='python7.1')
     code_2=PogrammingLanguage.objects.filter(title='python7.2')
@@ -552,6 +594,12 @@ def py_page7(request):
     }
     return render(request, 'python/code/py_page7.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page8(request):
     code_1=PogrammingLanguage.objects.filter(title='python8.1')
     code_2=PogrammingLanguage.objects.filter(title='python8.2')
@@ -565,6 +613,12 @@ def py_page8(request):
     }
     return render(request, 'python/code/py_page8.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page9(request):
     code_1=PogrammingLanguage.objects.filter(title='python9.1')
     code_2=PogrammingLanguage.objects.filter(title='python9.2')
@@ -585,6 +639,12 @@ def py_page9(request):
     }
     return render(request, 'python/code/py_page9.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page9b(request):
     code_1=PogrammingLanguage.objects.filter(title='python9b.1')
     code_2=PogrammingLanguage.objects.filter(title='python9b.2')
@@ -600,6 +660,12 @@ def py_page9b(request):
     }
     return render(request, 'python/code/py_page9b.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page10(request):
     code_1=PogrammingLanguage.objects.filter(title='python10.1')
     code_2=PogrammingLanguage.objects.filter(title='python10.2')
@@ -615,6 +681,12 @@ def py_page10(request):
     }
     return render(request, 'python/code/py_page10.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page11(request):
     code_1=PogrammingLanguage.objects.filter(title='python11.1')
     code_2=PogrammingLanguage.objects.filter(title='python11.2')
@@ -635,6 +707,12 @@ def py_page11(request):
     }
     return render(request, 'python/code/py_page11.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page12(request):
     code_1=PogrammingLanguage.objects.filter(title='python12.1')
     code_2=PogrammingLanguage.objects.filter(title='python12.2')
@@ -650,6 +728,12 @@ def py_page12(request):
     }
     return render(request, 'python/code/py_page12.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page13(request):
     code_1=PogrammingLanguage.objects.filter(title='python13.1')
     code_2=PogrammingLanguage.objects.filter(title='python13.2')
@@ -671,6 +755,12 @@ def py_page13(request):
     }
     return render(request, 'python/code/py_page13.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page14(request):
     code_1=PogrammingLanguage.objects.filter(title='python14.1')
     code_2=PogrammingLanguage.objects.filter(title='python14.2')
@@ -686,6 +776,12 @@ def py_page14(request):
     }
     return render(request, 'python/code/py_page14.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page14b(request):
     code_1=PogrammingLanguage.objects.filter(title='python14b.1')
     code_2=PogrammingLanguage.objects.filter(title='python14b.2')
@@ -701,6 +797,12 @@ def py_page14b(request):
     }
     return render(request, 'python/code/py_page14b.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page14c(request):
     code_1=PogrammingLanguage.objects.filter(title='python14c.1')
     code_2=PogrammingLanguage.objects.filter(title='python14c.2')
@@ -716,6 +818,12 @@ def py_page14c(request):
     }
     return render(request, 'python/code/py_page14c.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page14d(request):
     code_1=PogrammingLanguage.objects.filter(title='python14d.1')
     code_2=PogrammingLanguage.objects.filter(title='python14d.2')
@@ -732,6 +840,12 @@ def py_page14d(request):
     return render(request, 'python/code/py_page14d.html', context)
 
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page15(request):
     code_1=PogrammingLanguage.objects.filter(title='python15.1')
     code_2=PogrammingLanguage.objects.filter(title='python15.2')
@@ -747,6 +861,12 @@ def py_page15(request):
     }
     return render(request, 'python/code/py_page15.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
 def py_page16(request):
     code_1=PogrammingLanguage.objects.filter(title='python16.1')
     code_2=PogrammingLanguage.objects.filter(title='python16.2')
