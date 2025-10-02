@@ -350,7 +350,7 @@
                         
                         {% elif user_subscription.status == 'active' and plan.price_usd > user_subscription.plan.price_usd %}
                             <!-- UPGRADE AVAILABLE -->
-                            <a href="{% url 'subscription:choose_plan' plan.id %}" class="btn btn-primary">
+                            <a href="{% url 'choose_plan' plan.id %}" class="btn btn-primary">
                                 🔄 Upgrade Now
                             </a>
                         
@@ -363,12 +363,12 @@
                             </p>
                         
                         {% else %}
-                            <a href="{% url 'subscription:choose_plan' plan.id %}" class="btn btn-outline">
+                            <a href="{% url 'choose_plan' plan.id %}" class="btn btn-outline">
                                 Subscribe Now
                             </a>
                         {% endif %}
                     {% else %}
-                        <a href="{% url 'subscription:choose_plan' plan.id %}" class="btn btn-outline">
+                        <a href="{% url 'choose_plan' plan.id %}" class="btn btn-outline">
                             Subscribe Now
                         </a>
                     {% endif %}
@@ -378,7 +378,7 @@
 
             <!-- My Subscriptions Link -->
             <div style="text-align: center; margin-top: 40px;">
-                <a href="{% url 'subscription:my_subscription' %}" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+                <a href="{% url 'my_subscription' %}" style="color: var(--primary); text-decoration: none; font-weight: 600;">
                     📋 View My Subscription History
                 </a>
             </div>
