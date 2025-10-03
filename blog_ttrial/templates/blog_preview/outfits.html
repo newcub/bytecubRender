@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outfit Inspiration - Fashion Forward</title>
-    <link rel="stylesheet" href="{%static 'assets/CSS/blog_preview/style.css'%}">
     <link rel="stylesheet" href="{%static 'assets/CSS/blog_preview/outfits.css'%}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="{%static 'assets/CSS/blog_preview/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style type="text/css">
+        @media(max-width=768px){
+            .mobile-menu-toggle {
+                display: block; /* Show the mobile menu button */
+                z-index: 9999; /* Ensure it's always on top */
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -23,7 +29,7 @@
             <div class="outfit-grid">
                 <!-- Outfit 1 -->
                 <div class="outfit-card">
-                    <img src="images/fashion1.jpg" alt="Casual Chic Outfit">
+                    <img src="{%static 'assets/images/Front End Dev/outfit1.jpg'%}" alt="Casual Chic Outfit">
                     <h3>Casual Chic</h3>
                     <p>Effortlessly stylish for everyday wear. Denim, a simple tee, and a blazer.</p>
                     <a href="#" class="outfit-link">View Outfit <i class="fas fa-arrow-right"></i></a>
@@ -31,7 +37,7 @@
 
                 <!-- Outfit 2 -->
                 <div class="outfit-card">
-                    <img src="images/fashion2.jpg" alt="Evening Glamour Outfit">
+                    <img src="{%static 'assets/images/Front End Dev/outfit2.jpg'%}" alt="Evening Glamour Outfit">
                     <h3>Evening Glamour</h3>
                     <p>Sophisticated and elegant for evening events. A flowing dress and statement jewelry.</p>
                     <a href="#" class="outfit-link">View Outfit <i class="fas fa-arrow-right"></i></a>
@@ -39,7 +45,7 @@
 
                 <!-- Outfit 3 -->
                 <div class="outfit-card">
-                    <img src="images/fashion1.jpg" alt="Boho Style Outfit">
+                    <img src="{%static 'assets/images/Front End Dev/outfit3.jpg'%}" alt="Boho Style Outfit">
                     <h3>Boho Style</h3>
                     <p>Relaxed and free-spirited. Flowing fabrics, earthy tones, and unique accessories.</p>  
                     <a href="#" class="outfit-link">View Outfit <i class="fas fa-arrow-right"></i></a>
@@ -47,7 +53,7 @@
 
                 <!-- Outfit 4 -->
                 <div class="outfit-card">
-                    <img src="images/fashion2.jpg" alt="Professional Attire Outfit">
+                    <img src="{%static 'assets/images/Front End Dev/outfit4.jpg'%}" alt="Professional Attire Outfit">
                     <h3>Professional Attire</h3>
                     <p>Polished and confident for the workplace. Tailored separates and classic pieces.</p>
                     <a href="#" class="outfit-link">View Outfit <i class="fas fa-arrow-right"></i></a>
@@ -73,16 +79,16 @@
             <div class="product-slider">
                 <!-- Product 1 -->
                 <div class="product-card">
-                    <img src="images/fashion1.jpg" alt="Product 1">
-                    <h3>[Product Name 1]</h3>
+                    <img src="{%static 'assets/images/Front End Dev/outfit5.jpg'%}" alt="Product 1">
+                    <h3>The Contemporary Couture Look</h3>
                     <p>$7000</p>
                     <a href="#" class="product-link">Shop Now <i class="fas fa-shopping-cart"></i></a>
                 </div>
 
                 <!-- Product 2 -->
                 <div class="product-card">
-                    <img src="images/fashion1.jpg" alt="Product 2">
-                    <h3>[Product Name 2]</h3>
+                    <img src="{%static 'assets/images/Front End Dev/outfit6.jpg'%}" alt="Product 2">
+                    <h3>The Ultimate Power Suit Ensemble</h3>
                     <p>$4000</p>
                     <a href="#" class="product-link">Shop Now <i class="fas fa-shopping-cart"></i></a>
                 </div>
@@ -97,7 +103,7 @@
             <p>&copy; 2025 Fashion Forward. All rights reserved.</p>
         </div>
     </footer>
+    <script src="{%static 'assets/js/blog_preview/script.js'%}"></script>
 
-    <script src="script.js"></script>
 </body>
 </html>

@@ -80,7 +80,7 @@ class Answer(models.Model):
 
 class LeaderboardEntry(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    total_score = models.IntegerField()
+    total_score = models.IntegerField(default=0)
     ranking_score = models.IntegerField(default=0)
 
     def __str__(self):
