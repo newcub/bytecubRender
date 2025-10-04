@@ -54,5 +54,14 @@ path('py_page14c/',py_page14c, name="py_page14c"),
 path('py_page14d/',py_page14d, name="py_page14d"),
 path('py_page15/',py_page15, name="py_page15"),
 path('py_page16/',py_page16, name="py_page16"),
+
+
+# extra courses
+path('bootstrap/',bootstrap_view, name="bootstrap_view"),
+path('django/',django_view, name="django_view"),
+path('djangoREST/',djangoREST_view, name="djangoREST_view"),
+path('HTMX/',HTMX_view, name="HTMX_view"),
+path('Ajax/',Ajax_view, name="Ajax_view"),
+path('reactNative/',reactNative_view, name="reactNative_view"),
     
 ]

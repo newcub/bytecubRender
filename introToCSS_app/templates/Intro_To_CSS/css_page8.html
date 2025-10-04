@@ -1,0 +1,119 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Hosting [Vercel]</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'assets/CSS/IntroToHTML/index.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'assets/CSS/IntroToHTML/header.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/CSS/videos/video.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+          body {
+      font-family: 'Arial', sans-serif; /* A more professional default font */
+      margin: 0;
+      padding: 0;
+      
+      color: #333;
+    }
+
+    
+
+    .section1 { background-color: #e9ecef; /* Light Gray */
+        padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .h1style {
+      color: #343a40; /* Dark Gray */
+      font-size: 2.0em;
+      font-family: 'Georgia', serif; /* A more professional font for headings */
+      text-align: center;
+    }
+
+
+    .pstyle {
+      font-size: 1.1em;
+      line-height: 1.6; /* Improved readability */
+    }
+
+        .result{
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .chapter-pointer-8{
+	        border: 2px solid skyblue;
+        }
+    </style>
+</head>
+{%include 'all/snippets/header_snippet.html'%}
+  <body>
+    <main>
+    <div class="main-container">
+        <div class="left-container">
+            {%include 'introToCSS_app/snippets/left-container_snippet.html'%}
+        </div>
+        <div class="mid-container">
+           <h1>Hosting a Website on the Internet</h1>
+            <div class="button-container">
+                <a href="{%url 'css_ex3'%}"><button class="prev">Prev</button></a>
+                <a href="{%url 'blog_pg1'%}"><button class="next">Next</button></a>            
+            </div>
+            <!-- Featured Video      -->
+            <div class="main-video-container">
+                    <div class="content">
+                        <h2>Featured Video</h2>
+                    </div>
+                    
+                    <div class="video-wrapper">
+                        <video id="videoPlayer" width="560" height="315"  poster="{%static 'assets/images/IntroToHTML/1757183118927.jpg'%}" controls>
+                            <!-- Sample video from Pexels -->
+                            <source  src="{{video.video.url}}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                        <!-- Overlay navigation buttons -->
+                        <div class="overlay-controls">
+                            <div class="nav-btn" id="rewindOverlayBtn" title="Rewind 10 seconds"><i class="fa-solid fa-backward"></i></div>
+                            <div class="nav-btn" id="forwardOverlayBtn" title="Forward 10 seconds"><i class="fa-solid fa-forward"></i></div>
+                        </div>
+                    </div>
+                    
+                <div class="content">
+                    <div class="dropdown">
+                        <button class="dropdown-button">
+                            <span>Video Description</span>
+                            <span class="arrow"></span>
+                        </button>
+                        <div class="dropdown-content">
+                            <p><strong>Video Description:</strong></p>
+                            <p>Package: <a href="{%static 'assets/files/Profile Website.zip'%}"><i class="fa-solid fa-file-arrow-down"></i>Download</i></a></p>
+                            <p>Link: <a href="https://www.github.com" target="_blank">github.com</a></p>
+                            <p>Link: <a href="https://www.vercel.com" target="_blank" >vercel.com</a></p>
+                            
+                        </div>
+                    </div>
+
+                    <button class="interaction-button" id="interactiveButton">Click Me!</button>
+                </div>
+            </div>
+
+                <div class="button-container">
+                    <a href="{%url 'css_ex3'%}"><button class="prev">Prev</button></a>
+                    <a href="{%url 'blog_pg1'%}"><button class="next">Next</button></a>                
+                </div>
+        </div>
+        
+        
+    </div>
+   </main>
+  <footer>
+    {%include 'footer.html'%}
+</footer>
+<script type="text/javascript" src="{%static 'assets/js/main/scripts.js'%}"></script>
+<script src="{%static 'assets/js/videos/video.js'%}"></script>
+</body>
+</html>

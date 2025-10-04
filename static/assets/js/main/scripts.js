@@ -110,4 +110,90 @@ document.querySelectorAll('.whatsapp-button').forEach(button => {
 	});
 });
 
+// Copy button functionality with alert
+
+function copyToClipboard() {
+    // Get the text content from the code editor
+    const codeContent = document.querySelector('.code-editor-content').innerText;
+    
+    // Use the Clipboard API to copy the text
+    navigator.clipboard.writeText(codeContent).then(() => {
+        // Create and show alert
+        const alert = document.createElement('div');
+        alert.textContent = 'Copied to clipboard!';
+        alert.style.cssText = `
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        `;
+        
+        document.body.appendChild(alert);
+        
+        // Trigger reflow and show alert
+        setTimeout(() => {
+            alert.style.opacity = '1';
+        }, 10);
+        
+        // Remove alert after 1 second
+        setTimeout(() => {
+            alert.style.opacity = '0';
+            setTimeout(() => {
+                document.body.removeChild(alert);
+            }, 300);
+        }, 1000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = codeContent;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        // Show success message even with fallback
+        const alert = document.createElement('div');
+        alert.textContent = 'Copied to clipboard!';
+        alert.style.cssText = `
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        `;
+        
+        document.body.appendChild(alert);
+        
+        setTimeout(() => {
+            alert.style.opacity = '1';
+        }, 10);
+        
+        setTimeout(() => {
+            alert.style.opacity = '0';
+            setTimeout(() => {
+                document.body.removeChild(alert);
+            }, 300);
+        }, 1000);
+    });
+}
 

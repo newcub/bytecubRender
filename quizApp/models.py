@@ -80,8 +80,8 @@ class Answer(models.Model):
 
 class LeaderboardEntry(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    total_score = models.IntegerField(default=0)
-    ranking_score = models.IntegerField(default=0)
+    total_score = models.IntegerField(default=0,blank=True, null=True)
+    ranking_score = models.IntegerField(default=0,blank=True, null=True)
 
     def __str__(self):
         return f"{self.user.username} - {self.total_score} points"

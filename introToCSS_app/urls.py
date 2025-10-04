@@ -11,6 +11,7 @@ urlpatterns = [
     path('css_5/', CSS_intro_page5, name="css_5"),
     path('css_6/', CSS_intro_page6, name="css_6"),
     path('css_7/', CSS_intro_page7, name="css_7"),
+    path('css_8/', CSS_intro_page8, name="css_8"),
 
     path('css_ex1/',CSSIntro_ex1, name="css_ex1"),
     path('css_ex2/',CSSIntro_ex2, name="css_ex2"),

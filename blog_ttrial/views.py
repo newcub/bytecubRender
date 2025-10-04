@@ -4,8 +4,10 @@ from introToHTML_app.views import require_special_exercise_submission_HTML
 from introToCSS_app.views import require_special_exercise_submission_CSS
 from django.http import HttpResponse
 from exerciseApp.models import SpecialExercise
+from quizApp.models import QuizSubmission,Quiz,LeaderboardEntry
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import F
 
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
@@ -1059,6 +1061,8 @@ def blog_ex4_submission(request):
                 lang = request.POST.get('type')
                 code = request.POST.get('code')
                 special_exercise = SpecialExercise(user=user, title=title, type=lang, code=code, verified=False)
+                LeaderboardEntry.objects.filter(user=user).update(ranking_score=F('ranking_score') + 1)
+
                 special_exercise.save()
                 return redirect('blog_ex4_SuccessView')
             else:

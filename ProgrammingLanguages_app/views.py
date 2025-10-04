@@ -887,6 +887,60 @@ def py_page16(request):
     }
     return render(request, 'python/code/py_page16.html', context)
 
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
+def bootstrap_view(request):
+    return HttpResponse("Comming Soon...")
+
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
+def django_view(request):
+    return HttpResponse("Comming Soon...")
+
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
+def djangoREST_view(request):
+    return HttpResponse("Comming Soon...")
+
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
+def HTMX_view(request):
+    return HttpResponse("This program is integrated in the Python-Django course")
+
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
+def Ajax_view(request):
+    return HttpResponse("This program is integrated in the Python-Django course")
+
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+@require_special_exercise_submission_CSS
+@require_special_exercise_submission_blog_ex2
+@require_special_exercise_submission_blog_ex3
+@require_special_exercise_submission_blog_ex4
+def reactNative_view(request):
+    return HttpResponse("This program is integrated in the Django REST Framework course")
+
 
 
 

@@ -15,6 +15,13 @@
         .fa-book{
             color: rgba(0, 0, 0, 0.479);
         }
+        .section-header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .section-header a{
+            color: #4895ef;
+        }
 
     </style>
 	
@@ -30,6 +37,9 @@
             {% if pending_submissions %}
             <div class="section-header">
                 <h3><i class="fas fa-clock"></i> Pending Review</h3>
+                {%if points is not None%}
+                <h3>Your Rank: {{rank}} <a href="{%url 'leader_board'%}" ><small>more<i class="fas fa-chevron-down" style="font-size: smaller;"></i></small></a></h3>
+                {%endif%}
             </div>
             <div class="submissions-list">
                 {% for submission in pending_submissions %}

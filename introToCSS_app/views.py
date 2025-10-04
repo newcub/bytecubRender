@@ -2,10 +2,11 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .models import IntroToCSS
 from introToHTML_app.views import require_special_exercise_submission_HTML
 from django.http import HttpResponse
-from quizApp.models import QuizSubmission,Quiz
+from quizApp.models import QuizSubmission,Quiz,LeaderboardEntry
 from exerciseApp.models import SpecialExercise,VideoUpload
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import F
 
 # Create your views here.
 
@@ -65,15 +66,24 @@ def CSS_intro_page6(request):
 @require_special_exercise_submission_HTML
 def CSS_intro_page7(request):
     code=IntroToCSS.objects.filter(title='CSS_7.1')
-    quiz = get_object_or_404(Quiz, quiz_name='CSSQ2')
+    quiz = get_object_or_404(Quiz, quiz_name='CSSQ3')
     #check if the user has already submitted an answer for the quiz
     has_answered = QuizSubmission.objects.filter(user=request.user, quiz=quiz).exists()
+    print(f'has answred: {has_answered}')
 
     context={
         'code':code,
         'has_answered':has_answered
     }
     return render(request, 'Intro_To_CSS/css_page7.html', context)
+
+@login_required(login_url="login")
+@require_special_exercise_submission_HTML
+def CSS_intro_page8(request):
+    video=VideoUpload.objects.get(title="Deploying_to_Vercel")
+    return render(request, 'Intro_To_CSS/css_page8.html',{'video':video})
+
+
 
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
@@ -111,23 +121,25 @@ def require_special_exercise_submission_CSS(view_func):
 @require_special_exercise_submission_HTML
 def Exercise3_submission(request):
     user=request.user
-    try:
-        has_submitted=SpecialExercise.objects.filter(user=request.user,title="CSS Exercise 3") #checks if a user has done the exercise
-        if request.method == 'POST':
-            if not has_submitted:
-                    title=request.POST.get('title')
-                    lang = request.POST.get('type')
-                    code = request.POST.get('code')
-                    special_exercise = SpecialExercise(user=user, title=title, type=lang, code=code, verified=False)
-                    special_exercise.save()
-                    return redirect('CSS_SuccessView')
-            else:
-                return HttpResponse("You can't submitted thesame exercise twice.")
+    # try:
+    has_submitted=SpecialExercise.objects.filter(user=request.user,title="CSS Exercise 3") #checks if a user has done the exercise
+    if request.method == 'POST':
+        if not has_submitted:
+                title=request.POST.get('title')
+                lang = request.POST.get('type')
+                code = request.POST.get('code')
+                special_exercise = SpecialExercise(user=user, title=title, type=lang, code=code, verified=False)
+                # Update or create leaderboard entry
+                LeaderboardEntry.objects.filter(user=user).update(ranking_score=F('ranking_score') + 1)
+                special_exercise.save()
+                return redirect('CSS_SuccessView')
         else:
-            return render(request, 'Intro_To_CSS/css_ex3_submission.html',{'has_submitted':has_submitted})
+            return HttpResponse("You can't submitted thesame exercise twice.")
+    else:
+        return render(request, 'Intro_To_CSS/css_ex3_submission.html',{'has_submitted':has_submitted})
         
-    except:
-        return HttpResponse("Something went wrong")
+    # except:
+    #     return HttpResponse("Something went wrong")
     
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML    

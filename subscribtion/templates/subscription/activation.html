@@ -74,7 +74,7 @@
             <input type="text" name="search" class="search-input" placeholder="Search by email..." value="{{ search_query }}">
             <button type="submit" class="search-btn">Search</button>
             {% if search_query %}
-                <a href="{% url 'subscription:activation' %}" style="margin-left: 10px;">Clear Search</a>
+                <a href="{% url 'activation' %}" style="margin-left: 10px;">Clear Search</a>
             {% endif %}
         </form>
     </div>

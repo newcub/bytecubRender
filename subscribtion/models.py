@@ -14,11 +14,12 @@ class SubscriptionPlan(models.Model):
     
     name = models.CharField(max_length=100)
     plan_type = models.CharField(max_length=20, choices=PLAN_CHOICES, unique=True)
-    price_cfa = models.DecimalField(max_digits=10, decimal_places=2)
+    price_cfa = models.DecimalField(max_digits=10, decimal_places=0)
     price_usd = models.DecimalField(max_digits=10, decimal_places=2)
     duration_days = models.IntegerField(help_text="Duration in days")
     is_active = models.BooleanField(default=True)
     description = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
 
     # Add ordering for plan hierarchy (cheapest to most expensive)
     class Meta:
@@ -63,6 +64,10 @@ class UserSubscription(models.Model):
     upgrade_price_usd = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     upgrade_price_cfa = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     previous_plan = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, related_name='upgraded_from')
+    previous_plan_name=models.CharField(max_length=100,blank=True,null=True)
+    previous_plan_price=models.DecimalField(max_digits=10,decimal_places=2,blank=True,null=True)
+    upgrade_history = models.TextField(blank=True, null=True)
+
 
     def is_active(self):
         if self.status != 'active':
@@ -105,6 +110,25 @@ class UserSubscription(models.Model):
             'remaining_days': remaining_days,
             'is_upgrade': True
         }
+    
+    def add_upgrade_history(self, from_plan, to_plan, upgrade_price, transaction_id):
+        """Add upgrade history entry"""
+        import json
+        history = []
+        
+        if self.upgrade_history:
+            history = json.loads(self.upgrade_history)
+        
+        history.append({
+            'timestamp': timezone.now().isoformat(),
+            'from_plan': from_plan.name,
+            'to_plan': to_plan.name,
+            'upgrade_price': str(upgrade_price),
+            'transaction_id': transaction_id
+        })
+        
+        self.upgrade_history = json.dumps(history)
+        self.save()
     
     def str(self):
         return f"{self.user.email} - {self.plan.name if self.plan else 'No Plan'} - {self.status}"
