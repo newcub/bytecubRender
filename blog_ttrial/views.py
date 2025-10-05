@@ -8,22 +8,26 @@ from quizApp.models import QuizSubmission,Quiz,LeaderboardEntry
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import F
+from subscribtion.decorators import subscription_required
 
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page1(request):
     return render(request, 'blog_ttrial/page1.html')
 
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page2(request):
     return render(request, 'blog_ttrial/page2.html')
 
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page3(request):
     context=BlogTTrial.objects.filter(title='blogP3_HTML1')
     return render(request, 'blog_ttrial/page3.html',{'code':context})
@@ -31,6 +35,7 @@ def blogApp_page3(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page4(request):
     code_1=BlogTTrial.objects.filter(title='blogP4_HTML1')
     code_1a=BlogTTrial.objects.filter(title='blogP4_HTML1a')
@@ -43,6 +48,7 @@ def blogApp_page4(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page5(request):
     code_1=BlogTTrial.objects.filter(title='blogP5_CSS1')
     code_2=BlogTTrial.objects.filter(title='blogP5_CSS2')
@@ -57,6 +63,7 @@ def blogApp_page5(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page6(request):
     code_1=BlogTTrial.objects.filter(title='blogP6_CSS1')
     code_1a=BlogTTrial.objects.filter(title='blogP6_CSS1a')
@@ -78,6 +85,7 @@ def blogApp_page6(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page7(request):
     code_1=BlogTTrial.objects.filter(title='blogP7_CSS1')
     code_1a=BlogTTrial.objects.filter(title='blogP7_CSS1a')
@@ -98,6 +106,7 @@ def blogApp_page7(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page8(request):
     code_1=BlogTTrial.objects.filter(title='blogP8_CSS1')
     code_1a=BlogTTrial.objects.filter(title='blogP8_CSS1a')
@@ -114,6 +123,7 @@ def blogApp_page8(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page9(request):
     code_1=BlogTTrial.objects.filter(title='blogP8_HTML1')
     
@@ -125,6 +135,7 @@ def blogApp_page9(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page10(request):
     code_1=BlogTTrial.objects.filter(title='blogP10_CSS1')
     code_1a=BlogTTrial.objects.filter(title='blogP10_CSS1a')
@@ -145,6 +156,7 @@ def blogApp_page10(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page11(request):
     code_1=BlogTTrial.objects.filter(title='blogP11_HTML1')
     code_1a=BlogTTrial.objects.filter(title='blogP11_HTML1a')
@@ -163,6 +175,7 @@ def blogApp_page11(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page12(request):
     code_1=BlogTTrial.objects.filter(title='blogP12_CSS1')
     code_2=BlogTTrial.objects.filter(title='blogP12_CSS2')
@@ -177,6 +190,7 @@ def blogApp_page12(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page13(request):
     code_1=BlogTTrial.objects.filter(title='blogP13_HTML1')
     code_1a=BlogTTrial.objects.filter(title='blogP13_HTML1a')
@@ -197,6 +211,7 @@ def blogApp_page13(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page14(request):
     code_1=BlogTTrial.objects.filter(title='blogP14_HTML1')
     code_1a=BlogTTrial.objects.filter(title='blogP14_HTML1a')
@@ -217,6 +232,7 @@ def blogApp_page14(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page15(request):
     code_1=BlogTTrial.objects.filter(title='blogP15_CSS1')
     code_1a=BlogTTrial.objects.filter(title='blogP15_CSS1a')
@@ -239,6 +255,7 @@ def blogApp_page15(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page16(request):
     code_1=BlogTTrial.objects.filter(title='blogP16_CSS1')
     code_1a=BlogTTrial.objects.filter(title='blogP16_CSS1a')
@@ -261,6 +278,7 @@ def blogApp_page16(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page17(request):
     code_1=BlogTTrial.objects.filter(title='blogP17_CSS1')
     code_1a=BlogTTrial.objects.filter(title='blogP17_CSS1a')
@@ -279,12 +297,14 @@ def blogApp_page17(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page18(request):
     return render(request, 'blog_ttrial/page18.html')
 
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page19(request):
     code_1=BlogTTrial.objects.filter(title='blogP19_HTML1')
     code_1a=BlogTTrial.objects.filter(title='blogP19_HTML1a')
@@ -293,6 +313,7 @@ def blogApp_page19(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page20(request):
     code_1=BlogTTrial.objects.filter(title='blogP20_CSS1')
     code_1a=BlogTTrial.objects.filter(title='blogP20_CSS1a')
@@ -312,6 +333,7 @@ def blogApp_page20(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page21(request):
     code_1=BlogTTrial.objects.filter(title='blogP21_HTML1')
     code_1a=BlogTTrial.objects.filter(title='blogP21_HTML1a')
@@ -329,6 +351,7 @@ def blogApp_page21(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page22(request):
     code_1=BlogTTrial.objects.filter(title='blogP22_HTML1')
     code_1a=BlogTTrial.objects.filter(title='blogP22_HTML1a')
@@ -347,6 +370,7 @@ def blogApp_page22(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page23(request):
     code_1=BlogTTrial.objects.filter(title='blogP23_HTML1')
     code_2=BlogTTrial.objects.filter(title='blogP23_CSS2')
@@ -360,6 +384,7 @@ def blogApp_page23(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page24(request):
     code_1=BlogTTrial.objects.filter(title='blogP24_HTML1')
     code_2=BlogTTrial.objects.filter(title='blogP24_CSS2')
@@ -373,12 +398,14 @@ def blogApp_page24(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page25(request):
     return render(request, 'blog_ttrial/page25.html')
 
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page26(request):
     has_submitted=SpecialExercise.objects.filter(user=request.user,title="Blog Exercise 2") #checks if a user has done the exercise
     return render(request, 'blog_ttrial/page26.html',{'has_submitted':has_submitted})
@@ -386,6 +413,7 @@ def blogApp_page26(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 def blogApp_page26_b(request):
     return render(request, 'blog_ttrial/page26_b.html')
 
@@ -432,6 +460,7 @@ def blog_ex2_SuccessView(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page27(request):
     code_1=BlogTTrial.objects.filter(title='blogP27_HTML1')
@@ -446,6 +475,7 @@ def blogApp_page27(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page27_b(request):
     return render(request, 'blog_ttrial/page27_b.html')
@@ -453,6 +483,7 @@ def blogApp_page27_b(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page28(request):
     code_1=BlogTTrial.objects.filter(title='blogP28_HTML1')
@@ -467,6 +498,7 @@ def blogApp_page28(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page29(request):
     code_1=BlogTTrial.objects.filter(title='blogP29_HTML1')
@@ -485,6 +517,7 @@ def blogApp_page29(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page30(request):
     code_1=BlogTTrial.objects.filter(title='blogP30_CSS1')
@@ -507,6 +540,7 @@ def blogApp_page30(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page31(request):
     code_1=BlogTTrial.objects.filter(title='blogP31_CSS1')
@@ -529,6 +563,7 @@ def blogApp_page31(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page32(request):
     code_1=BlogTTrial.objects.filter(title='blogP32_CSS1')
@@ -541,6 +576,7 @@ def blogApp_page32(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page33(request):
     code_1=BlogTTrial.objects.filter(title='blogP33_HTML1')
@@ -555,6 +591,7 @@ def blogApp_page33(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page34(request):
     code_1=BlogTTrial.objects.filter(title='blogP34_CSS1')
@@ -573,6 +610,7 @@ def blogApp_page34(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page35(request):
     code_1=BlogTTrial.objects.filter(title='blogP35_CSS1')
@@ -587,6 +625,7 @@ def blogApp_page35(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page36(request):
     code_1=BlogTTrial.objects.filter(title='blogP36_HTML1')
@@ -605,6 +644,7 @@ def blogApp_page36(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page37(request):
     code_1=BlogTTrial.objects.filter(title='blogP37_CSS1')
@@ -623,6 +663,7 @@ def blogApp_page37(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page38(request):
     return render(request, 'blog_ttrial/page38.html')
@@ -630,6 +671,7 @@ def blogApp_page38(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 def blogApp_page39(request):
     has_submitted=SpecialExercise.objects.filter(user=request.user,title="Blog Exercise 3") #checks if a user has done the exercise
@@ -679,6 +721,7 @@ def blog_ex3_SuccessView(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page40(request):
@@ -692,6 +735,7 @@ def blogApp_page40(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page40_b(request):
@@ -700,6 +744,7 @@ def blogApp_page40_b(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page41(request):
@@ -717,6 +762,7 @@ def blogApp_page41(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page42(request):
@@ -736,6 +782,7 @@ def blogApp_page42(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page43(request):
@@ -755,6 +802,7 @@ def blogApp_page43(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page44(request):
@@ -774,6 +822,7 @@ def blogApp_page44(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page45(request):
@@ -789,6 +838,7 @@ def blogApp_page45(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page46(request):
@@ -808,6 +858,7 @@ def blogApp_page46(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page47(request):
@@ -827,6 +878,7 @@ def blogApp_page47(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page48(request):
@@ -846,6 +898,7 @@ def blogApp_page48(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page49(request):
@@ -861,6 +914,7 @@ def blogApp_page49(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page50(request):
@@ -880,6 +934,7 @@ def blogApp_page50(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page51(request):
@@ -899,6 +954,7 @@ def blogApp_page51(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page52(request):
@@ -915,6 +971,7 @@ def blogApp_page52(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page53(request):
@@ -930,6 +987,7 @@ def blogApp_page53(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page54(request):
@@ -949,6 +1007,7 @@ def blogApp_page54(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page55(request):
@@ -965,6 +1024,7 @@ def blogApp_page55(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page56(request):
@@ -984,6 +1044,7 @@ def blogApp_page56(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page57(request):
@@ -1003,6 +1064,7 @@ def blogApp_page57(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page58(request):
@@ -1022,6 +1084,7 @@ def blogApp_page58(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page59(request):
@@ -1031,6 +1094,7 @@ def blogApp_page59(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 def blogApp_page59_b(request):
@@ -1082,6 +1146,7 @@ def blog_ex4_SuccessView(request):
 @login_required(login_url="login")
 @require_special_exercise_submission_HTML
 @require_special_exercise_submission_CSS
+@subscription_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4

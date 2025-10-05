@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from exerciseApp.models import SpecialExercise
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from subscribtion.decorators import subscription_required
 
 
 # javascript views javascript views javascript views javascript views javascript views javascript views javascript views
@@ -20,6 +21,7 @@ from django.contrib.auth.decorators import login_required
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page1(request):
     return render(request, 'javaScript/code/js_page1.html')
 
@@ -30,6 +32,7 @@ def js_page1(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page2(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript2.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript2.2')
@@ -50,6 +53,7 @@ def js_page2(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page3(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript3.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript3.2')
@@ -67,6 +71,7 @@ def js_page3(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page4(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript4.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript4.2')
@@ -87,6 +92,7 @@ def js_page4(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page5(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript5.1')
     quiz = get_object_or_404(Quiz, quiz_name='JSQ1')
@@ -106,6 +112,7 @@ def js_page5(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page6(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript6.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript6.2')
@@ -126,6 +133,7 @@ def js_page6(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page7(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript7.1')
 
@@ -141,6 +149,7 @@ def js_page7(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page8(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript8.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript8.2')
@@ -162,6 +171,7 @@ def js_page8(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page9(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript9.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript9.2')
@@ -179,6 +189,7 @@ def js_page9(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page10(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript10.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript10.2')
@@ -201,6 +212,7 @@ def js_page10(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page11(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript11.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript11.2')
@@ -218,6 +230,7 @@ def js_page11(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page12(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript12.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript12.2')
@@ -237,6 +250,7 @@ def js_page12(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page13(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript13.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript13.2')
@@ -256,6 +270,7 @@ def js_page13(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page14(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript14.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript14.2')
@@ -283,6 +298,7 @@ def js_page14(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page15(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript15.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript15.2')
@@ -305,6 +321,7 @@ def js_page15(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page16(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript16.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript16.2')
@@ -326,6 +343,7 @@ def js_page16(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page17(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript17.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript17.2')
@@ -347,6 +365,7 @@ def js_page17(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page18(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript18.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript18.2')
@@ -373,6 +392,7 @@ def js_page18(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page19(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript19.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript19.2')
@@ -394,6 +414,7 @@ def js_page19(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page20(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript20.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript20.2')
@@ -416,6 +437,7 @@ def js_page20(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page21(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript21.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript21.2')
@@ -442,6 +464,7 @@ def js_page21(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def js_page22(request):
     code_1=PogrammingLanguage.objects.filter(title='javaScript22.1')
     code_2=PogrammingLanguage.objects.filter(title='javaScript22.2')
@@ -467,6 +490,7 @@ def js_page22(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page1(request):
     return render(request, 'python/code/py_page1.html')
 
@@ -476,6 +500,7 @@ def py_page1(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page2(request):
     code_1=PogrammingLanguage.objects.filter(title='python2.1')
     code_2=PogrammingLanguage.objects.filter(title='python2.2')
@@ -495,6 +520,7 @@ def py_page2(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page3(request):
     code_1=PogrammingLanguage.objects.filter(title='python3.1')
     code_2=PogrammingLanguage.objects.filter(title='python3.2')
@@ -516,6 +542,7 @@ def py_page3(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page4(request):
     code_1=PogrammingLanguage.objects.filter(title='python4.1')
     code_2=PogrammingLanguage.objects.filter(title='python4.2')
@@ -535,6 +562,7 @@ def py_page4(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page5(request):
     code_1=PogrammingLanguage.objects.filter(title='python5.1')
     code_2=PogrammingLanguage.objects.filter(title='python5.2')
@@ -559,6 +587,7 @@ def py_page5(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page6(request):
     code_1=PogrammingLanguage.objects.filter(title='python6.1')
     code_2=PogrammingLanguage.objects.filter(title='python6.2')
@@ -579,6 +608,7 @@ def py_page6(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page7(request):
     code_1=PogrammingLanguage.objects.filter(title='python7.1')
     code_2=PogrammingLanguage.objects.filter(title='python7.2')
@@ -600,6 +630,7 @@ def py_page7(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page8(request):
     code_1=PogrammingLanguage.objects.filter(title='python8.1')
     code_2=PogrammingLanguage.objects.filter(title='python8.2')
@@ -619,6 +650,7 @@ def py_page8(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page9(request):
     code_1=PogrammingLanguage.objects.filter(title='python9.1')
     code_2=PogrammingLanguage.objects.filter(title='python9.2')
@@ -645,6 +677,7 @@ def py_page9(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page9b(request):
     code_1=PogrammingLanguage.objects.filter(title='python9b.1')
     code_2=PogrammingLanguage.objects.filter(title='python9b.2')
@@ -666,6 +699,7 @@ def py_page9b(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page10(request):
     code_1=PogrammingLanguage.objects.filter(title='python10.1')
     code_2=PogrammingLanguage.objects.filter(title='python10.2')
@@ -687,6 +721,7 @@ def py_page10(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page11(request):
     code_1=PogrammingLanguage.objects.filter(title='python11.1')
     code_2=PogrammingLanguage.objects.filter(title='python11.2')
@@ -713,6 +748,7 @@ def py_page11(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page12(request):
     code_1=PogrammingLanguage.objects.filter(title='python12.1')
     code_2=PogrammingLanguage.objects.filter(title='python12.2')
@@ -734,6 +770,7 @@ def py_page12(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page13(request):
     code_1=PogrammingLanguage.objects.filter(title='python13.1')
     code_2=PogrammingLanguage.objects.filter(title='python13.2')
@@ -761,6 +798,7 @@ def py_page13(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page14(request):
     code_1=PogrammingLanguage.objects.filter(title='python14.1')
     code_2=PogrammingLanguage.objects.filter(title='python14.2')
@@ -782,6 +820,7 @@ def py_page14(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page14b(request):
     code_1=PogrammingLanguage.objects.filter(title='python14b.1')
     code_2=PogrammingLanguage.objects.filter(title='python14b.2')
@@ -803,6 +842,7 @@ def py_page14b(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page14c(request):
     code_1=PogrammingLanguage.objects.filter(title='python14c.1')
     code_2=PogrammingLanguage.objects.filter(title='python14c.2')
@@ -824,6 +864,7 @@ def py_page14c(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page14d(request):
     code_1=PogrammingLanguage.objects.filter(title='python14d.1')
     code_2=PogrammingLanguage.objects.filter(title='python14d.2')
@@ -846,6 +887,7 @@ def py_page14d(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page15(request):
     code_1=PogrammingLanguage.objects.filter(title='python15.1')
     code_2=PogrammingLanguage.objects.filter(title='python15.2')
@@ -867,6 +909,7 @@ def py_page15(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def py_page16(request):
     code_1=PogrammingLanguage.objects.filter(title='python16.1')
     code_2=PogrammingLanguage.objects.filter(title='python16.2')
@@ -893,6 +936,7 @@ def py_page16(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def bootstrap_view(request):
     return HttpResponse("Comming Soon...")
 
@@ -902,6 +946,7 @@ def bootstrap_view(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def django_view(request):
     return HttpResponse("Comming Soon...")
 
@@ -911,6 +956,7 @@ def django_view(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def djangoREST_view(request):
     return HttpResponse("Comming Soon...")
 
@@ -920,6 +966,7 @@ def djangoREST_view(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def HTMX_view(request):
     return HttpResponse("This program is integrated in the Python-Django course")
 
@@ -929,6 +976,7 @@ def HTMX_view(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def Ajax_view(request):
     return HttpResponse("This program is integrated in the Python-Django course")
 
@@ -938,6 +986,7 @@ def Ajax_view(request):
 @require_special_exercise_submission_blog_ex2
 @require_special_exercise_submission_blog_ex3
 @require_special_exercise_submission_blog_ex4
+@subscription_required
 def reactNative_view(request):
     return HttpResponse("This program is integrated in the Django REST Framework course")
 
